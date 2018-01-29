@@ -9,9 +9,6 @@
   "dependencies": {
     "prop-types": "^15.5.7"
   },
-  "peerDependencies": {
-    "react": "^15.5.0"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/woowalker/react-native-ptr-control.git"
