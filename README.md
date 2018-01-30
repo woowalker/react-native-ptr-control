@@ -31,6 +31,7 @@ and then take your iphone or android device, use the **_Expo_** app scan the QRC
 **Be careful:**
 * if can not load project, see the detail, sometimes it cost long time to load, and sometimes, the **_Expo_** version
 is incorrect
+* checkout the network, whether is your device and your computer in the same network segment
 ## Installation
 `$ npm install react-native-ptr-control --save`
 ## Usage
