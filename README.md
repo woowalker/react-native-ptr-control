@@ -11,19 +11,19 @@ Supported Scroll Component is:
 
 Supported React-Native Version is **>= 0.43.0**, because this lib supported FlatList
 ## example
-example in the folder of example, the app.js is the entrance, example version is:
-* **expo: 23**
-* **react-native: 0.50.0**
-* **react: 16.0.0**
+example is in the folder of example, the app.js is the entrance, example run in environment:
+* expo: 23
+* react-native: 0.50.0
+* react: 16.0.0
 ### run example
 **Suggest: run example in real device, the performance will perfect**
 <br>
 
-1、`cd example`
+* `cd example`
 
-2、`yarn install`
+* `yarn install`
 
-3、`yarn start`
+* `yarn start`
 
 and then take your iphone or android device, use the **_Expo_** app scan the QRCode, and have fun
 <br>
@@ -73,13 +73,10 @@ should also be passed_**
 
 ## static methods
 **_Important: when header refresh done, or footer load-more done, should call this static method_**
-#### headerRefreshDone
-on prop: onHeaderRefreshing, when refresh done, and the data load complete, call this method to stop refresh
-<br>
+* **headerRefreshDone** `PTRControl.headerRefreshDone()`
 
-`PTRControl.headerRefreshDone()`
-#### footerInfiniteDone
-on prop: onFooterInfiniting, when load-more done, and the data load complete, call this method to stop load-more
-<br>
+  after onHeaderRefreshing, when refresh done, and the data load complete, call this method to stop refresh
+  
+* **footerInfiniteDone** `PTRControl.footerInfiniteDone()`
 
-`PTRControl.footerInfiniteDone()`
+  after onFooterInfiniting, when load-more done, and the data load complete, call this method to stop load-more
