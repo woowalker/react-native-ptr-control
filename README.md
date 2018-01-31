@@ -2,12 +2,11 @@
 React-native pull to refresh and pull-up load more component, supported custom refresh and load more component
 
 Supported Scroll Component is:
-<br>
+
 * **ScrollView**
 * **ListView**
 * **FlatList**
 * **VirtualizedList**
-<br>
 
 Supported React-Native Version is **>= 0.43.0**, because this lib supported FlatList
 ## example
@@ -15,9 +14,10 @@ example is in the folder of example, the app.js is the entrance, example run in 
 * expo: 23
 * react-native: 0.50.0
 * react: 16.0.0
+
+![](gif/ptr_ios.gif) ![](gif/ptr_android.gif)
 ### run example
 **Suggest: run example in real device, the performance will perfect**
-<br>
 
 * `cd example`
 
@@ -26,7 +26,6 @@ example is in the folder of example, the app.js is the entrance, example run in 
 * `yarn start`
 
 and then take your iphone or android device, use the **_Expo_** app scan the QRCode, and have fun
-<br>
 
 **Be careful:**
 * if can not load project, see the detail, sometimes it cost long time to load, and sometimes, the **_Expo_** version
@@ -37,21 +36,50 @@ is incorrect
 ## Usage
 here is a simple usage of this lib, see example folder and find app.js for full usage
 
-    import React, {Component} from 'react'
-    import {View, Text} from 'react-native'
-    import PTRControl from 'react-native-ptr-control'
-    export default class MyScrollComponent extends Component {
-      render () {
-        return (
-          <PTRControl
-            dataSource={this.state.dataSource}
-            renderRow={this.renderRow}
-            showsVerticalScrollIndicator={false}
-            scrollComponent={'ListView'}
-            />
-          )
-      }
-    }
+**_Note: when use react-native-ptr-control, use it as usual, for example, if scrollComponent is 'ScrollView', pass ScrollView`s 
+props and props of lib provide, such as:_**
+
+* ScrollView
+
+        import React, {Component} from 'react'
+        import {View, Text} from 'react-native'
+        import PTRControl from 'react-native-ptr-control'
+        export default class MyScrollComponent extends Component {
+          render () {
+            return (
+              <PTRControl
+                //here is the origin props of ScrollView
+                style={{flex: 1}}
+                showsVerticalScrollIndicator={false}
+                //here is the props of lib provide
+                scrollComponent={'ScrollView'}
+                enableFooterInfinite={false}>
+                <View>
+                  <Text>{'scroll content'}</Text>
+                </View>
+              </PTRControl>
+              )
+          }
+        }
+* ListView
+
+        import React, {Component} from 'react'
+        import {View, Text} from 'react-native'
+        import PTRControl from 'react-native-ptr-control'
+        export default class MyScrollComponent extends Component {
+          render () {
+            return (
+              <PTRControl
+                //here is the origin props of ListView
+                dataSource={this.state.dataSource}
+                renderRow={this.renderRow}
+                showsVerticalScrollIndicator={false}
+                //here is the props of lib provide
+                scrollComponent={'ListView'}
+                />
+              )
+          }
+        }
     
 ## Properties
 **_Note: list of below props is extends props, the origin props of scroll component (for example: ScrollView) 
