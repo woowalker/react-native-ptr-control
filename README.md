@@ -92,14 +92,30 @@ should also be passed_**
 | *enableHeaderRefresh* | whether to enable header refresh | *bool* | true | all | no |
 | *setHeaderHeight* | if header refresh is set, this prop mark the header height, if header refresh is set, **this prop should be set** | *number* | 60 | _Android_ | no |
 | *onTopReachedThreshold* | threshold to trigger refresh | *number* | 10 | _Android_ | no |
-| *renderHeaderRefresh* | render the custom component of refresh header, and the *gestureStatus* will be passed, see example for detail | *func* | default function | all | no |
+| *renderHeaderRefresh* | render the custom component of refresh header, and the *gestureStatus* and *offset* will be passed, see example for detail | *func* | default function | all | no |
 | *onHeaderRefreshing* | when release to refresh, this fun will be called, see example for detail | *func* | default function | all | no |
+| *pullFriction* | when scroll component is not full of children, pull to refresh is controlled by gesture, and this prop controls how fast to pull down, **range: 0 ~ 1** | *number* | 0.6 | _Android_ | no |
 | *enableFooterInfinite* | whether to enable footer load-more | *bool* | true | all | no |
 | *setFooterHeight* | if footer load-more is set, this prop mark the footer height, if footer load-more is set, **this prop should be set** | *number* | 60 | _Android_ | no |
 | *onEndReachedThreshold* | threshold to trigger load-more | *number* | 10 | _Android_ | no |
-| *renderFooterInfinite* | render the custom component of load-more, and the *gestureStatus* will be passed, see example for detail | *func* | default function | all | no |
+| *renderFooterInfinite* | render the custom component of load-more, and the *gestureStatus* and *offset* will be passed, see example for detail | *func* | default function | all | no |
 | *onFooterInfiniting* | when release to load-more, this fun will be called, see example for detail | *func* | default function | all | no |
 
+#### onHeaderRefreshing and onFooterInfiniting
+this props should be passed a function, and *gestureStatus* and *offset* will be the params, something like that
+
+`onHeaderRefreshing = {(gestureStatus, offset) => <HeaderRefresh gestureStatus={gestureStatus} offset={offset/>}`
+
+`onFooterInfiniting = {(gestureStatus, offset) => <FooterInfinite gestureStatus={gestureStatus} offset={offset/>}`
+#### gestureStatus
+* 0: gesture none
+* 1: pull-up to load-more
+* 2: pull-down to refresh
+* 3: release to refresh or load-more
+* 4: on header refreshing
+* 5: on footer loading-more
+#### offset
+* when pull-down to refresh or pull-up to load-more, this offset params represent the pull distance 
 ## static methods
 **_Important: when header refresh done, or footer load-more done, should call this static method_**
 * **headerRefreshDone** `PTRControl.headerRefreshDone()`

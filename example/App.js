@@ -25,7 +25,7 @@ class FooterInfinite extends Component {
         _refreshFont = 'pull-up-to-load-more'
         break;
       case 3:
-        _refreshFont = 'release-to-load...'
+        _refreshFont = 'release-to-load'
         break;
       case 5:
         _refreshFont = 'loading'
