@@ -149,6 +149,8 @@ export default class Example extends Component {
             }, 1000)
           }}
 
+          pullFriction={0.68}
+
           enableFooterInfinite={true}
           setFooterHeight={60}
           onEndReachedThreshold={10}

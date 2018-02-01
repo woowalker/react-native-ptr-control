@@ -20,6 +20,8 @@ export default class PTRControl extends Component {
     renderHeaderRefresh: PropTypes.func,
     onHeaderRefreshing: PropTypes.func,
 
+    pullFriction: PropTypes.number,
+
     enableFooterInfinite: PropTypes.bool,
     setFooterHeight: PropTypes.number,
     onEndReachedThreshold: PropTypes.number,
