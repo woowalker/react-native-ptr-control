@@ -49,7 +49,8 @@ class FooterInfinite extends Component {
 
 class HeaderRefresh extends Component {
   static defaultProps = {
-    gestureStatus: 2
+    gestureStatus: 2,
+    offset: 0
   }
 
   constructor(props) {
@@ -133,7 +134,9 @@ export default class Example extends Component {
           enableHeaderRefresh={true}
           setHeaderHeight={100}
           onTopReachedThreshold={10}
-          renderHeaderRefresh={(gestureStatus) => <HeaderRefresh gestureStatus={gestureStatus}/>}
+          renderHeaderRefresh={
+            (gestureStatus, offset) => <HeaderRefresh gestureStatus={gestureStatus} offset={offset}/>
+          }
           onHeaderRefreshing={() => {
             clearTimeout(this._timer)
             this._timer = setTimeout(() => {
@@ -149,7 +152,9 @@ export default class Example extends Component {
           enableFooterInfinite={true}
           setFooterHeight={60}
           onEndReachedThreshold={10}
-          renderFooterInfinite={(gestureStatus) => <FooterInfinite gestureStatus={gestureStatus}/>}
+          renderFooterInfinite={
+            (gestureStatus, offset) => <FooterInfinite gestureStatus={gestureStatus} offset={offset}/>
+          }
           onFooterInfiniting={() => {
             clearTimeout(this._timer)
             this._timer = setTimeout(() => {
